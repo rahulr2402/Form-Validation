@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form Validation</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+		* {
+			font-family: "Work Sans", sans-serif;
+		}
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: url("data:image/jpeg;base64,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");
+			background-size: cover;
+		}
+		#form {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-direction: column;
+		  	margin: 0;
+		  	position: absolute;
+		  	top: 65%;
+		  	transform: translateY(-100%);
+		  	background-color: rgba(255,255,255,0.2);
+		  	padding: 4rem;
+		  	border-radius: 1rem;
+		}
+		#form input, button {
+			padding: 0.5rem;
+			margin: 0.2rem;
+		  	border-radius: 1rem;
+		  	border: 0;
+		}
+		button:active {
+			background-color: black;
+			color:  white;
+		}
+	</style>
+</head>
+<body>
+	<div id="form">
+	    <input type="text" placeholder="Your sweet name..." id="name">
+	    <input type="number" placeholder="Your age..." id="age">
+	    <input type="text" placeholder="Your phone number..." id="phnum">
+	    <input type="email" placeholder="Your email..." id="mail">
+	    <button onclick="validate()">SUBMIT</button>
+	</div>
+	<script type="text/javascript">
+		function validate(){
+			let name = document.getElementById('name').value;
+			let age = document.getElementById('age').value;
+			let phnum = document.getElementById('phnum').value;
+			let mail = document.getElementById('mail').value;
+
+			console.log(name);
+			console.log(age);
+			console.log(phnum);
+			console.log(mail);
+
+			if(name == ""){
+				alert("Provide a valid name");
+				return false;
+			}
+
+			if(age == "" || age <= 0){
+				alert("Provide a valid age");
+				return false;
+			}
+
+			const phonePattern = /\d{10}$/;
+			console.log(phonePattern.test(phnum));
+			if(phnum == "" || !phonePattern.test(phnum)){
+				alert("Provide a valid phone number");
+				return false;
+			}
+
+			const mailPattern = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			console.log(mailPattern.test(mail));
+			if(mail == "" || !mailPattern.test(mail)){
+				alert("Provide a valid mail Id");
+				return false;
+			}
+
+			alert("Form Submitted");
+			return true;
+		}
+	</script>
+</body>
+</html>
